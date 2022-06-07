@@ -1,0 +1,90 @@
+/*column container*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*left column*/
+.side {
+    flex: 30%;
+}
+
+/*right column*/
+.main {
+    flex: 70%;
+}
+
+.main .posts .listOfPosts {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+li {
+    padding-bottom: 2px;
+}
+
+li .listEntry {
+    color: black;
+}
+
+
+
+/*for phones or smaller devices*/
+@media screen and (min-width:0px) and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .side {
+        padding-bottom: 20px;
+    }
+
+    .name {
+        padding-bottom: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*widescreen*/
+@media screen and (min-width:1080px) {
+    .side {
+        padding-left: 150px;
+    }
+
+    .main {
+        padding-right: 350px;
+    }
+
+    .name {
+        padding-bottom: 20px;
+    }
+}
+
+/* HD */
+@media screen and (min-width:1920px) {
+
+    /*left column*/
+    .side {
+        flex: 30%;
+        padding-left: 400px;
+    }
+
+    /*right column*/
+    .main {
+        flex: 70%;
+        padding-right: 550px;
+        padding-left: 150px;
+    }
+
+    .name {
+        padding-bottom: 20px;
+    }
+
+}

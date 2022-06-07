@@ -1,0 +1,28 @@
+.width {
+    width: 50%;
+}
+
+textarea {
+    resize: none;
+}
+
+/*for phones and small devices*/
+@media screen and (max-width: 768px) {
+
+    .width {
+        width: 100%;
+         !important;
+    }
+
+    .padding {
+        padding: 15px;
+    }
+
+
+}
+
+/*for tablets*/
+@media screen and (max-width: 992px) {}
+
+/*for larger Desktop*/
+@media screen and (max-width: 1200px) {}

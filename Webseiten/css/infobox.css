@@ -1,0 +1,25 @@
+.box {
+    width: auto;
+    height: auto;
+    margin: 0 auto 15px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.info {
+    color: dodgerblue;
+}
+
+.warning {
+    color: yellow;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

@@ -1,0 +1,236 @@
+.grid-container {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin: auto 30px;
+}
+
+.castlename {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.image {
+    min-height: 100px;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+.details {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.description {
+    grid-column: 1;
+    grid-row: 4;
+    max-width: 800px;
+}
+
+.gallery {
+    max-width: 840px;
+    grid-column: 1;
+    grid-row: 5;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-box {
+    flex-basis: 50%;
+}
+
+.gallery img {
+    width: 95%;
+    min-width: 75%;
+    height: auto;
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Modal Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.castleSlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.next {
+    margin-right: 30px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    margin-left: 30px;
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.socialmedia {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+.entryComments {
+    grid-column: 1;
+    grid-row: 7;
+
+}
+
+.commentBox {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border: 1px dotted grey;
+}
+
+.commentBox p {
+    margin: 5px;
+}
+
+.commentTime {
+    color: grey
+}
+
+.commentRespond {
+    grid-row: 8;
+    grid-column: 1;
+}
+
+.commentFormComment textarea {
+    background-color: #f5f5f5;
+}
+
+.commentFormAuthor input {
+    background-color: #f5f5f5;
+    width: 250px;
+}
+
+.formSubmit input[type="submit"] {
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+}
+
+.formSubmit input[type="submit"]:hover {
+    background-color: #555555;
+}
+
+/*for phones or smaller devices*/
+@media screen and (min-width:0px) and (max-width: 768px) {
+    .image img {
+        max-width: 100%;
+    }
+
+    .description ul {
+        padding-left: 0px;
+    }
+
+    .description li {
+        margin-bottom: 8px;
+        display: flex;
+    }
+}
+
+/* Widescreen */
+@media only screen and (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 600px auto;
+        margin: auto auto;
+        grid-column-gap: 2px;
+    }
+
+    .image img {
+        max-height: auto;
+        max-width: 600px;
+    }
+
+    .details {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .description {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        max-width: 800px;
+    }
+
+    .description ul {
+        padding-left: 0px;
+    }
+
+    .description li {
+        display: inline-block;
+
+    }
+
+    .gallery {
+        grid-column: 1 /span 2;
+        grid-row: 4;
+    }
+
+    .gallery-box {
+        flex-basis: 20%;
+    }
+}
+
+/* HD */
+@media only screen and (min-width: 1280px) {
+    .grid-container {
+        margin: auto 300px;
+    }
+
+}

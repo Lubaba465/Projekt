@@ -1,0 +1,42 @@
+html,
+body {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Arial;
+    font-size: 1em;
+    overflow: hidden;
+    color: black;
+}
+
+a {
+    color: forestgreen;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+#map {
+    height: 70%;
+    width: 100%;
+    border: 5px solid white;
+}
+
+#osm {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.popup img{
+    width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+
+    body,html {
+        overflow: auto;
+    }
+
+}

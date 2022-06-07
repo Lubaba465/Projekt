@@ -1,0 +1,21 @@
+.entry {
+    display: flex;
+}
+
+.entry img {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    padding-right: 10px;
+}
+
+/*for phones or smaller devices*/
+@media screen and (max-width: 768px) {
+    .entry {
+        flex-direction: column;
+    }
+
+    .entry img {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,107 @@
+/* Here are all the properties needed for the website (only CSS) */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fullscreen {
+    height: 100%;
+    width: 100%;
+}
+
+.blackborder {
+    padding: 5px;
+    border: 1px dotted grey;
+    margin: 1px;
+}
+
+.nopoints {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.nodec {
+    text-decoration: none;
+}
+
+.white {
+    color: white;
+}
+
+.white:hover {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.black:hover {
+    color: forestgreen;
+}
+
+
+.green {
+    color: green;
+}
+
+.green:hover {
+    color: lightgreen;
+}
+
+.button {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid grey;
+    width: auto;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+}
+
+.button:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.red {
+    color: red;
+}
+
+.red:hover {
+    color: lightseagreen;
+}
+
+.grey {
+    background: grey;
+}
+
+.forestgreen {
+    background: forestgreen;
+}
+
+.center {
+    text-align: center;
+}
+
+.bigfont {
+    font-size: 24px;
+}
+
+.right {
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.padding {
+    padding: 100px;
+}

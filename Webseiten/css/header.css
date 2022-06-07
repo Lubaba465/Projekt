@@ -1,0 +1,74 @@
+/* grid layout for the profile page*/
+/* Login Register Pop-Up*/
+#login:not(:target) .inhalt,
+#login:not(:target) .hide,
+#login:target .show {
+    display: none;
+}
+
+#login:target .inhalt {
+    position: absolute;
+    left: 10%;
+    top: 3.5em;
+    background-color: white;
+    display: block;
+    z-index: 10;
+}
+
+div#login {
+    display: inline
+}
+
+#register:not(:target) .inhalt,
+#register:not(:target) .hide,
+#register:target .show {
+    display: none;
+}
+
+#register:target .inhalt {
+    position: absolute;
+    right: 10%;
+    top: 3.5em;
+    background-color: white;
+    display: block;
+    z-index: 10;
+}
+
+div#register {
+    display: inline
+}
+
+/*End Login Register Pop-Up*/
+
+@media screen and (max-width: 700px) {
+    #login:target .inhalt {
+        left: 30%;
+    }
+
+    #register:target .inhalt {
+        right: 30%;
+    }
+}
+
+/*grid-layout for the header*/
+.header-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.header-item {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+/*one media querie for now*/
+@media screen and (max-width: 700px) {
+    .header-container {
+        display: block;
+        width: 100%;
+    }
+}
+
+/*1.) < 768px = phone, >= 768px = tablet, >=992 = desktop, >=1200px = for larger desktop */

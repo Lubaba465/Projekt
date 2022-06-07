@@ -1,0 +1,41 @@
+/*CSS style sheet for the navigation bar*/
+/*navigation bar links*/
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*navigation hover*/
+.navbar a:hover {
+    background: green;
+    cursor: pointer;
+}
+
+.navbar-item {
+    flex: 100%;
+    max-width: 100%;
+}
+
+/*navigation bar*/
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+    }
+}

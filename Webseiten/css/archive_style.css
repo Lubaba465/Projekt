@@ -1,0 +1,86 @@
+.archive-grid {
+    display: grid;
+    grid-template-columns: 75% 25%;
+
+}
+
+.archive-flex-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.archive-flex-sidebar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.archive-flex-sidebar-item {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.archive-flex-main {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+.archive-flex-main-item {
+    padding-left: 10px;
+}
+
+.show-sidebar {
+    position: fixed;
+    top: 3%;
+    right: 10px;
+    transform: scale(2);
+}
+
+.hide-sidebar {
+    position: fixed;
+    top: 6%;
+    right: 10px;
+    transform: scale(2);
+}
+
+/*for phones or smaller devices*/
+@media screen and (min-width:768px) {
+
+    .hide-sidebar,
+    .show-sidebar {
+        display: none;
+
+    }
+}
+
+/*for phones or smaller devices*/
+@media screen and (max-width: 768px) {
+    .archive-grid {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    #toggle-sidebar:not(:target) .inhalt-sidebar,
+    #toggle-sidebar:not(:target) .hide-sidebar,
+    #toggle-sidebar:target .show-sidebar {
+        display: none;
+    }
+
+    #toggle-sidebar:target .inhalt-sidebar {
+        position: fixed;
+        top: 9%;
+        right: 5px;
+        z-index: 1;
+        display: block;
+        background-color: white;
+        max-width: 50%;
+        padding: 3px;
+        border: 1px solid forestgreen;
+    }
+}

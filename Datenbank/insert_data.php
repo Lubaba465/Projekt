@@ -1,0 +1,51 @@
+<?php
+try{
+$user = "root";
+$pw = null;
+//$dsn = "mysql:dbname=PHP-PDO;host=localhost";
+$dsn= "sqlite:./datenbank.db";
+$db = new PDO($dsn, $user, $pw);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $password = strval(password_hash("12345", PASSWORD_DEFAULT));
+    $answer = strval(password_hash("Hans", PASSWORD_DEFAULT));
+$db->exec("
+    INSERT INTO users (username, password, description, picturepath, question, answer) VALUES ('Joe Doe','$password' , 'Das ist meine Profilseite', './bilder/unknown.png', 'Wie lautet der Name ihres 1. Haustieres?', '$answer');
+    INSERT INTO users (username, password, description, picturepath, question, answer) VALUES ('John Martins','$password' , 'hi', './bilder/unknown.png', 'Wie lautet der Name ihres 1. Haustieres?', '$answer');
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Schloss Neuenstein', 'Neuenstein', 'Deutschland', 1250, '13. Jahrhundert', 'Renaissance', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 1, '2.1.2019 21:17:57', '2019.01.02 21:07:57', 'N', 5.845, 50.586);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Schloss Kilkenny', 'Kilkenny', 'England', 1700, '18. Jahrhundert', 'Historismus', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 1, '2.11.2018 21:17:57', '2018.01.02 21:07:57', 'K', 6.68, 45.456);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Burg Adendorf', 'Adendorf', 'Deutschland', 1337, '14. Jahrhundert', 'Keine Angabe', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 2, '11.4.2019 21:17:57', '2019.03.02 21:07:57', 'A', 7.3547, 53.2346);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Burg Kreuzenstein', 'Leobendorf', 'Österreich', 1150, '12. Jahrhundert', 'Neuromantisch', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 2, '22.01.2019 21:17:57', '2018.12.18 21:07:57', 'K', 7.36, 49.346);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Burg Hohenzollern', 'Bisingen', 'Deutschland', 1267, '13. Jahrhundet', 'Keine Angabe', 'Keine Angabe', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 1, '2.5.2019 21:17:57', '2019.02.02 21:07:57', 'H', 0.346, 51.463);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Burg Kriebstein', 'Waldheim', 'Deutschland', 1384, '14. Jahrhundert', 'Keine Angabe', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 2, '2.4.2019 21:17:57', '2018.05.12 21:07:57', 'K', 0.0, 50.0);
+    INSERT INTO castles (name, city, country, year, century, style, public, link, description, author_id, change_date, creation_date, firstletter, longitude, latitude) VALUES ('Schloss Neuschwanstein', 'Schwangau', 'Deutschland', 1869, '19. Jahrhundert', 'Romantischer Eklektizismus', 'Ja', 'https://example.com', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', 1, '2.6.2019 21:17:57', '2019.03.02 21:07:57', 'N', 2.546, 48.3463);
+    INSERT INTO comments (castle_id, author, time, content) VALUES (1, 'James Bond', '07.07.2027 07:07:07', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At');
+    INSERT INTO comments (castle_id, author, time, content) VALUES (1, 'Bruce Wayne', '08.07.2017 17:09:59', 'Mein Haus ist geiler');
+    INSERT INTO comments (castle_id, author, time, content) VALUES (5, 'James Bond', '07.07.2027 07:07:07', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At');
+    INSERT INTO comments (castle_id, author, time, content) VALUES (2, 'Bruce Wayne', '08.07.2017 17:09:59', 'Mein Haus ist geiler');
+    INSERT INTO comments (castle_id, author, time, content) VALUES (4, 'James Bond', '07.07.2027 07:07:07', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At');
+    INSERT INTO comments (castle_id, author, time, content) VALUES (4, 'Bruce Wayne', '08.07.2017 17:09:59', 'Mein Haus ist geiler');
+    INSERT INTO pictures (castle_id, path) VALUES (1, './bilder/neuenstein0.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (2, './bilder/Kilkenny-castle.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (2, './bilder/kilkenny1.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (3, './bilder/Burg_Adendorf.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (4, './bilder/Burg_Kreuzenstein.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (5, './bilder/Burg_Hohenzollern_ak.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (6, './bilder/Burg_Kriebstein.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (6, './bilder/kriebstein0.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (6, './bilder/kriebstein1.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (7, './bilder/neuschwanstein.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (7, './bilder/neuschwanstein/neuschw1.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (7, './bilder/neuschwanstein/neuschw2.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (7, './bilder/neuschwanstein/neuschw3.jpg');
+    INSERT INTO pictures (castle_id, path) VALUES (7, './bilder/neuschwanstein/neuschw4.jpg');
+");
+
+$err = $db->errorInfo();
+echo strval($err[0]);
+$db = null;
+}catch(PDOException $e) {
+    echo $e->getMessage();
+} finally {
+    
+}
+?>
